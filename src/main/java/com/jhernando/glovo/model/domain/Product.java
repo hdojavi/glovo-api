@@ -11,34 +11,23 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Data
-@Table(name = "orderbusi")
+@Table(name = "product")
 @Entity
-public class OrderBusi {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Size(max = 20)
-    private String orderdate;
+    @Size(max = 50)
+    private String name;
 
-    private float pricetotal;
+    @Size(max = 250)
+    private String description;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "userid")
-    @NotNull
-    private User user;
-
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "ordermethod")
-    @NotNull
-    private OrderMethod orderMethod;
+    private float price;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "businessid")
     @NotNull
     private Business business;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "orderBusi", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<OrderLine> orderlines;
 }
