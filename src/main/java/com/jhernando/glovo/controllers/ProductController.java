@@ -45,4 +45,7 @@ public class ProductController {
         productService.delete(id);
     }
 
+    @GetMapping("/business/{id}")
+    public List<Product> findByBusinessId(@PathVariable Long id) {return productService.findByBusinessId(id);}
+
 }

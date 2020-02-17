@@ -43,4 +43,7 @@ public class ProductService implements IService<Product, Long> {
         productRepository.deleteById(id);
     }
 
+    public List<Product> findByBusinessId(Long id) {
+        return productRepository.findAllByBusiness_Id(id);
+    }
 }
