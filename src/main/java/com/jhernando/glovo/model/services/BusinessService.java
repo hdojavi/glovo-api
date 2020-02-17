@@ -43,4 +43,7 @@ public class BusinessService implements IService<Business, Long> {
         businessRepository.deleteById(id);
     }
 
+    public List<Business> findByCategoryId(Long id) {
+        return businessRepository.findBusinessesByBusinessCategory_Id(id);
+    }
 }
