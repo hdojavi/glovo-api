@@ -45,4 +45,8 @@ public class OrderBusiController {
         orderBusiService.delete(id);
     }
 
+    @GetMapping("/user/{id}")
+    public List<OrderBusi> findOrdersByUser(@PathVariable Long id) {
+        return orderBusiService.findOrdersByUser(id);
+    }
 }

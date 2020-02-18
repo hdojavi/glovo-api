@@ -43,4 +43,7 @@ public class OrderBusiService implements IService<OrderBusi, Long> {
         orderBusiRepository.deleteById(id);
     }
 
+    public List<OrderBusi> findOrdersByUser(Long id) {
+        return orderBusiRepository.findAllByUser_Id(id);
+    }
 }
