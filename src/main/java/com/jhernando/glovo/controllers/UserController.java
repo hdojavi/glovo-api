@@ -26,7 +26,7 @@ public class UserController {
         return userService.findById(id);
     }
 
-    @PostMapping
+    @PostMapping(value = "/register")
     @ResponseStatus(HttpStatus.CREATED)
     public User insert(@RequestBody User user) {
         return userService.save(user);
@@ -47,4 +47,5 @@ public class UserController {
     public User login(@RequestBody User user) {
         return userService.login(user);
     }
+
 }

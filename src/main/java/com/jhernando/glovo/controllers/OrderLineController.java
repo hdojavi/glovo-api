@@ -44,4 +44,8 @@ public class OrderLineController {
         orderLineService.delete(id);
     }
 
+    @GetMapping("/order/{id}")
+    public List<OrderLine> findAllByOrderBusi_Id(@PathVariable Long id) {
+        return orderLineService.findAllByOrderBusi_Id(id);
+    }
 }

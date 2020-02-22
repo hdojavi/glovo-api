@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface IBusinessRepository extends JpaRepository<Business, Long> {
     List<Business> findBusinessesByBusinessCategory_Id(Long id);
+    List<Business> findAllByNameContains(String name);
+    List<Business> findAllByBusinessCategory_IdAndNameContains(Long id, String name);
 }

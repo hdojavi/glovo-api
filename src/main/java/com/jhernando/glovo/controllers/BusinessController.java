@@ -49,4 +49,13 @@ public class BusinessController {
     public List<Business> findByCategoryId(@PathVariable Long id) {
         return businessService.findByCategoryId(id);
     }
+
+    @GetMapping("/name/{name}")
+    public List<Business> findByQuery(@PathVariable String name) {
+        return businessService.findByQuery(name);
+    }
+
+    @GetMapping("/category/{id}/{name}")
+    public List<Business> findByQueryCategory(@PathVariable Long id, @PathVariable String name){return businessService.findByQueryCategory(id, name);}
+
 }

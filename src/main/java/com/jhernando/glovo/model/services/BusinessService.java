@@ -46,4 +46,12 @@ public class BusinessService implements IService<Business, Long> {
     public List<Business> findByCategoryId(Long id) {
         return businessRepository.findBusinessesByBusinessCategory_Id(id);
     }
+
+    public List<Business> findByQuery(String name) {
+        return businessRepository.findAllByNameContains(name);
+    }
+
+    public List<Business> findByQueryCategory(Long id, String name) {
+        return businessRepository.findAllByBusinessCategory_IdAndNameContains(id, name);
+    }
 }

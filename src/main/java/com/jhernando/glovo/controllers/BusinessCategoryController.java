@@ -4,6 +4,7 @@ import com.jhernando.glovo.model.domain.Business;
 import com.jhernando.glovo.model.domain.BusinessCategory;
 import com.jhernando.glovo.model.services.BusinessCategoryService;
 import com.jhernando.glovo.model.services.BusinessService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
